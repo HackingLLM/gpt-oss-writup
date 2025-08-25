@@ -157,7 +157,7 @@ letting harmful intent pass through logical scaffolding.
 ## 5. Conclusion
 
 
-
+## References
 
 [1] Agarwal, Sandhini, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K. Arora et al. "gpt-oss-120b & gpt-oss-20b Model Card." arXiv preprint arXiv:2508.10925 (2025).
 
