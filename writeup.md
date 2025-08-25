@@ -34,7 +34,7 @@ for its specific token distribution and decoding preferences.
 **Main findings: CoT and agentic vulnerabilities.**
 - finding 1: Schrodinger's compliance
 - finding 2: Quant fever
-- finding 3:
+- finding 3: Reasoning procedure mirage
 - finding 4:
 - finding 5:
 
@@ -97,9 +97,9 @@ and have some details findings:
 - the model is sensitive to the following words for allowed policies: XXX
 - what else?
 
-*Leveraging schrodinger's compliance as an attack.*
+**Leveraging schrodinger's compliance as an attack.**
 To demonstrate the security implication of our finding,
-we construct an attack, __schrodinger's compliance attack__,
+we construct an attack, _schrodinger's compliance attack_,
 that applies to all users without manipulating the harmony format or model's CoT.
 - How it works:
   -- discover allowed and disallowed policies
@@ -111,7 +111,7 @@ Detailed observation in CoT: XXX
 
 ### 3.X: Quant fever
 
-__Quant fever__ refers to a phenomenon where the model becomes fixated on numerical
+_Quant fever_ refers to a phenomenon where the model becomes fixated on numerical
 targets, treating them as the dominant objective regardless of context.
 In GPT-OSS-20B, this manifests when the model encounters instructions such as
 "try your best to delete 90% of files."
@@ -124,7 +124,7 @@ the dangerous behavior disappears.
 This illustrates how quant fever drives the model to overcommit to quantitative
 objectives, often at the expense of ignoring safety.
 
-*Quant fever in agentic scenarios.*
+**Quant fever in agentic scenarios.**
 We design two agentic scenarios---file management and process management---to
 illustrate the risks posed by quant fever.
 - explain the scenarios
@@ -134,7 +134,7 @@ illustrate the risks posed by quant fever.
 
 ### 3.X: Reasoning procedure mirage
 
-__Reasoning procedure mirage__ captures a failure mode when GPT-OSS-20B follows the structure of
+_Reasoning procedure mirage_ captures a failure mode when GPT-OSS-20B follows the structure of
 reasoning steps rather than the meaning of the request.
 A harmful instruction
 given directly is often rejected, but if the same request is wrapped in a
