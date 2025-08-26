@@ -70,7 +70,7 @@ For the GPT-OSS-20b model, we further adapt JO to account
 for its specific token distribution and decoding preferences
 (see our tailored JO in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)).
 
-![jailbreak oracle](./jo.jpg "Jailbreak Oracle")
+![jailbreak oracle](./figs/jo.jpg "Jailbreak Oracle")
 
 
 **Comprehensive security assessment.**
