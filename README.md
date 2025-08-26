@@ -340,10 +340,11 @@ reasoning blackholes, Schrodinger's compliance, reasoning procedure mirage, and
 chain-oriented prompting (COP)---each enabling new attacks that bypass existing
 safeguards by exploiting weaknesses in reasoning and alignment.
 We build attack prototypes that raise jailbreak rates from 3.3% to 44.4% without CoT
-manipulation (S3.3), and from 28.4% to 55.3% with CoT manipulation (S3.4).
+manipulation ([S3.3](#33-schrodingers-compliance)),
+and from 28.4% to 55.3% with CoT manipulation ([S3.4](#34-reasoning-procedure-mirage)).
 In agentic settings, we further observe a ~70% probability of risky behavior on
-benign prompts with numerical targets,
-and a 70–80% success rate for COP attacks using prompt injection.
+benign prompts with numerical targets ([S3.1](#31-quant-fever)),
+and a 70–80% success rate for COP attacks using prompt injection ([S3.5](#35-chain-oriented-prompting-cop)).
 These findings highlight the urgent need for
 defenses that address vulnerabilities arising not from isolated prompts, but
 from compositional reasoning, procedural scaffolding, and adversarially
