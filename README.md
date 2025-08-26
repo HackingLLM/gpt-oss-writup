@@ -72,9 +72,9 @@ for its specific token distribution and decoding preferences.
 
 
 **Overall security: highly robust under normal operation with harmony formatting, but occasionally vulnerable to adversarial tweaks.**
-- setup: config, benchmarks, judger
+- setup: config, benchmarks, judger (see following)
 - baselines: publicly known attacks to GPT-OSS-20B
-- a table:
+- a table: (see following)
   - testing results
   - JO results
 
