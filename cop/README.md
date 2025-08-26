@@ -1,1 +1,1 @@
-We include the full conversation trace of two different scenario here.
+We include the full conversation trace of two different scenario here. `delete_file.trace` demonstrate that the model can be tricked into executing the destructive `rm -rf *` command. `reveal_key.trace` shows that the model can be used to upload the users private ssh key to a public repo.
