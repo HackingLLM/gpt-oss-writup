@@ -50,7 +50,8 @@ We focus on how these features shape the model's behaviors and examine their sec
     Exploiting this behavior, we design a Chain-Oriented Prompting (COP) attack
     that decomposes a malicious objective into benign-looking steps which, when
     executed in sequence, assemble into a harmful action.
-    In our experiments, COP attack make the model execute "rm -rf *" command with 80% success rate.
+    In our experiments, COP attack make the model execute "rm -rf *" command with 80% success rate,
+    and push user's ssh private key to a public repository with 70% success rate.
 
 
 **Our approach: Jailbreak Oracle.**
