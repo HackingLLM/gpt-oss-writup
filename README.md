@@ -484,3 +484,11 @@ as a denial-of-service attack.
 [2] Lin, Shuyi, Anshuman Suri, Alina Oprea, and Cheng Tan. "LLM Jailbreak Oracle." arXiv preprint arXiv:2506.17299 (2025).
 
 [3] Shacham, Hovav. "The geometry of innocent flesh on the bone: Return-into-libc without function calls (on the x86)." In Proceedings of the 14th ACM conference on Computer and communications security, pp. 552-561. 2007.
+
+[4] Muyu He on X. https://x.com/HeMuyu0327/status/1955828183867252786
+
+[5] lyra bubbles on X. https://x.com/_lyraaaa_/status/1952825311118475607
+
+[6] "Jailbreak GPT OSS by using this in the system prompt". https://www.reddit.com/r/LocalLLaMA/comments/1misyew/jailbreak_gpt_oss_by_using_this_in_the_system/
+
+[7] "Intriguing Properties of gpt-oss Jailbreaks". https://www.lesswrong.com/posts/XvpEsjKwQFcWoD89g/intriguing-properties-of-gpt-oss-jailbreaks
