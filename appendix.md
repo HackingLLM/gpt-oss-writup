@@ -7,6 +7,7 @@
 - [Schrodinger's compliance](https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack)
 - [Reasoning procedure mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0)
 - [Chain-Oriented Prompting](https://github.com/HackingLLM/chain_oriented_prompting#)
+- [Jailbreak Oracle](https://github.com/HackingLLM/jailbreak_oracle_hackathon)
 
 ## Experiments Traces
 
