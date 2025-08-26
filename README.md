@@ -221,7 +221,7 @@ Below are two studies to confirm our hypothesis
 
 ![loop_prob_trend](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/7695363ce17b1c85c5c74623b989b022a2560028/figs/reasoning-blackhole/loop_prob_trend.png)
 
-![normal_attention_heatmaps](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/647a36201ed529b5e2db83e83c14a12e793f93b9/figs/reasoning-blackhole/normal_attention_heatmaps.png)
+![normal_attention_heatmaps](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/8ff3abf31c8f86c76470495a80b1eb0a05c1e9e5/figs/reasoning-blackhole/normal_attention_heatmaps.png)
 
 ![repeat_attention_heatmaps](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/7695363ce17b1c85c5c74623b989b022a2560028/figs/reasoning-blackhole/repeat_attention_heatmaps.png)
 
