@@ -395,8 +395,8 @@ Detailed attack process is described in [Appendix](https://github.com/HackingLLM
 
 Unlike content-based CoT hijacking [5,6,7], our attack exploits the structure of CoT.
 To validate its effectiveness, we compare against the CoT hijacking
-baseline proposed by UChicago [7], which relies on repeated content-based
-hijacking. The results are shown below.
+baseline proposed by UChicago [7], which relies on repeated content-based hijacking.
+The figure below shows the results---the gap between the two lines reflects the effect of procedure mirage.
 
 ![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
 
