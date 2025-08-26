@@ -5,6 +5,7 @@
 ## Experiments Traces
 
 - [quantfever](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/quantfever)
+- [chain-oriented-prompting](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop)
 
 ## Experiment Procedures
 
