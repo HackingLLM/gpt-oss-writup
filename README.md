@@ -120,9 +120,9 @@ values indicate the probability of at least one Jailbroken answer in the tree se
       -- top_p: 1
       -- max_length: 4096
     - Benchmark:
-      -- Benchmark consists 90 prompts randomly sampled from AdvBench, JailbreakBench/JBB-Behaviors and AgentHarm with random seed 2026
+      -- Benchmark consists 90 prompts randomly sampled from AdvBench[8], JailbreakBench[9] and AgentHarm[10] with random seed 2026
     - judger:
-      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- strongReject[11]
       -- LLM: gpt-4o-mini
     - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
 
@@ -138,7 +138,7 @@ values indicate the probability of at least one Jailbroken answer in the tree se
       -- top_p: 1
       -- max_length: 4096
     - judger:
-      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- strongReject: [11]
       -- LLM: gpt-4o-mini
     - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
 
@@ -580,6 +580,7 @@ as a denial-of-service attack.
 
 [3] Shacham, Hovav. "The geometry of innocent flesh on the bone: Return-into-libc without function calls (on the x86)." In Proceedings of the 14th ACM conference on Computer and communications security, pp. 552-561. 2007.
 
+
 [4] Muyu He on X. https://x.com/HeMuyu0327/status/1955828183867252786
 
 [5] lyra bubbles on X. https://x.com/_lyraaaa_/status/1952825311118475607
@@ -587,3 +588,12 @@ as a denial-of-service attack.
 [6] "Jailbreak GPT OSS by using this in the system prompt". https://www.reddit.com/r/LocalLLaMA/comments/1misyew/jailbreak_gpt_oss_by_using_this_in_the_system/
 
 [7] "Intriguing Properties of gpt-oss Jailbreaks". https://www.lesswrong.com/posts/XvpEsjKwQFcWoD89g/intriguing-properties-of-gpt-oss-jailbreaks
+
+[8] Chen, Yangyi, Hongcheng Gao, Ganqu Cui, Fanchao Qi, Longtao Huang, Zhiyuan Liu, and Maosong Sun. "Why should adversarial perturbations be imperceptible? rethink the research paradigm in adversarial NLP." arXiv preprint arXiv:2210.10683 (2022).
+
+[9] Chao, Patrick, Edoardo Debenedetti, Alexander Robey, Maksym Andriushchenko, Francesco Croce, Vikash Sehwag, Edgar Dobriban et al. "Jailbreakbench: An open robustness benchmark for jailbreaking large language models." Advances in Neural Information Processing Systems 37 (2024): 55005-55029.
+
+[10] Andriushchenko, Maksym, Alexandra Souly, Mateusz Dziemian, Derek Duenas, Maxwell Lin, Justin Wang, Dan Hendrycks et al. "Agentharm: A benchmark for measuring harmfulness of llm agents." arXiv preprint arXiv:2410.09024 (2024).
+
+[11] Souly, Alexandra, Qingyuan Lu, Dillon Bowen, Tu Trinh, Elvis Hsieh, Sana Pandey, Pieter Abbeel et al. "A strongreject for empty jailbreaks." Advances in Neural Information Processing Systems 37 (2024): 125416-125440.
+
