@@ -143,7 +143,7 @@ Below we outline the threat models for both the baselines and our findings:
 
 | Threat model        | Baselines                                                                                           | Ours                                                                                                                                               |
 | --------------      | --------------                                                                                      | --------------                                                                                                                                     |
-| Edn-user attackers  |                                                                                                     | Quant fever ([S3.1](#31-quant-fever)), <br> Schrodinger's compliance ([S3.3](#33-schrodingers-compliance))                                         |
+| End-user attackers  |                                                                                                     | Quant fever ([S3.1](#31-quant-fever)), <br> Schrodinger's compliance ([S3.3](#33-schrodingers-compliance))                                         |
 | Black-box attackers | Remove Harmony template,<br> Remove Harmony template + CoT override,<br> Repeating with CoT Mimicry | Reasoning procedure mirage ([S3.4](#34-reasoning-procedure-mirage)), <br> Chain-Oriented Prompting (COP)([S3.5](#35-chain-oriented-prompting-cop)) |
 | White-box attackers |                                                                                                     | Reasoning blackhole ([S3.2](#32-reasoning-blackhole))                                                                                              |
 
