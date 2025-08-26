@@ -97,7 +97,7 @@ while JO values indicate the probability of identifying at least one Jailbroken 
 ^: We're running out of time to complete this JO evaluation.
 
 
-## 2. Public Known Attacks, Setup, and Threat models
+## 2. Public Known Attacks, Setup, and Threat Models
 
 ### 2.1 Public known attacks (our baselines)
 
@@ -113,7 +113,7 @@ We implement three such attacks as baselines, covering all techniques currently 
   did not hear back before the deadline,
   so we reproduced their implementation to the best of our knowledge
   based on their public blog [7].
-  See details in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)).
+  See details in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md).
 
 
 ### 2.2 Experiment setup
@@ -139,7 +139,7 @@ We consider three threat models in this study:
   control over the model's configurations and the decoding process,
   but cannot change the weights of the model.
 
-Below we outline the threat models for both the baselines and our proposed attacks:
+Below we outline the threat models for both the baselines and our findings:
 
 | Threat model        | Baselines                                                                                           | Ours                                                                                                                                               |
 | --------------      | --------------                                                                                      | --------------                                                                                                                                     |
