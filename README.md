@@ -88,7 +88,7 @@ The table reports results from 30 prompts randomly sampled from our benchmarks.
 Each cell shows the percentage of Jailbroken answers judged by StrongReject, while JO
 values indicate the probability of at least one Jailbroken answer in the tree search.
 
-| attack method | greedy sampling | default sampling | JO (our tool) |
+| attack method | greedy decoding | default decoding | JO (our tool) |
 |-----------|-------------|-------------|-------------|
 | no attack | 0 | 0 | 6.67%|
 | remove harmony template [4] | 0 | 6.67% |13.3%|
@@ -219,7 +219,8 @@ We further observe that batching intensifies this issue,
 which could enable adversaries to construct infinite loops of repetition that can be exploited
 as a denial-of-service attack.
 
-Below are two studies to confirm our hypothesis (more in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)):
+Below are two studies to confirm our hypothesis
+(more studies in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)):
 - Fig1: By plotting the top-1 token probability (blue line), we confirm the presence of
   blackholes---once the token length exceeds 100, the top-1 moving-avg token probability (dashed red line)
   approaches almost 100%, causing the model to repeat indefinitely.
@@ -294,8 +295,6 @@ Here is the ASR with baseline:
 
 
 ### 3.4 Reasoning procedure mirage
-
-The repo link (with tag): https://github.com/HackingLLM/cot_mirage/tree/v0.1.0
 
 _Reasoning procedure mirage_ captures a failure mode when GPT-OSS-20B follows the structure of
 reasoning steps rather than the meaning of the request.
