@@ -13,3 +13,7 @@ This directory contains runtime logs and results from Chain-of-Thought (CoT) att
 ## Retry History
 - retry_results_mirage.csv - Attack retry history of each prompt of the benchmark for reasoning procedure mirage attack
 - retry_results_UC.csv - Attack retry history of each prompt of the benchmark for artificial CoT repeating attack by UChicago Xlab
+
+## Example
+
+- example.txt - An example to demonstrate reasoning procedure mirage attack
