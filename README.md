@@ -331,10 +331,6 @@ We couldn't access their detailed methodology, so we reproduced the UChicago exp
 
 ![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
 
-OR
-
-![UCvsTIAN_2.svg](figs/finding3/UCvsTIAN_2.svg)
-
 The overall success rate increased by increasing samping times. We also observed that we outperformed the UC approach significantly, which demonstrates the effectiveness of our jailbreak method.
 
 #### Tooling
