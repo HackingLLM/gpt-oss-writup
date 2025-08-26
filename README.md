@@ -282,7 +282,7 @@ given directly is often rejected, but if the same request is wrapped in a
 benign-looking chain of toughts, the model is more likely to comply.
 Here, the stepwise procedure itself acts as the persuader:
 the orderly form convinces the model even when the outcome is unsafe.
-This shows a key weakness in GPT-OSS-20B's reasoning setup—form can outweigh substance,
+This shows a unique behavior in GPT-OSS-20B's reasoning setup: form can outweigh substance,
 letting harmful intent pass through logical scaffolding.
 
 **A new attack: CoT mirage hacking.**
