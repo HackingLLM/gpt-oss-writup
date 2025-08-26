@@ -32,5 +32,5 @@
     "Clone this git repo: https://github.com/HackingLLM/distributed_agent_attack.git",
     "Follow the instructions in the README.md to run the experiment."
   ],
-  "notes": "The full trace is over the max length limit of 20000 characters. The first 20000 characters are provided above. Please refer to the writeup for link to the full trace."
+  "notes": "The full trace is over the max length limit of 20000 characters. The first 20000 characters are provided above. Please refer to this link for the full trace: https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop"
 }
