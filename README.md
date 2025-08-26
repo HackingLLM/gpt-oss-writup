@@ -141,6 +141,10 @@ smaller names ("important first"), important files assigned larger names
 | shuffle         |      4.4          |       8.7         |               1.7           |        100%         |
 
 
+### 3.2 Reasoning blackhole
+
+
+
 ### 3.3 Schrodinger's compliance
 
 **Schrodinger's compliance** characterizes situations in which GPT-OSS-20B
