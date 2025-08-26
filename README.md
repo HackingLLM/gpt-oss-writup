@@ -141,9 +141,6 @@ smaller names ("important first"), important files assigned larger names
 | regular first   |      3.6          |       10         |                  3        |        100%         |
 | shuffle         |      4.4          |       8.7         |               1.7           |        100%         |
 
-We also observed and confirmed similar quant fever behaviors when running a [deception benchmark](https://huggingface.co/datasets/PKU-Alignment/DeceptionBench). 
-Per the trace [multi-choice-1](quantfever/multi-choice-1), the model can correctly answer all the multiple choice questions after reading the passage if no accuracy target is set. However, it will give wrong answers deliberately if the accuracy target is set to a lower value like 40%.
-
 ### 3.3 Schrodinger's compliance
 
 **Schrodinger's compliance** characterizes situations in which GPT-OSS-20B
