@@ -279,7 +279,7 @@ _Reasoning procedure mirage_ captures a failure mode when GPT-OSS-20B follows th
 reasoning steps rather than the meaning of the request.
 A harmful instruction
 given directly is often rejected, but if the same request is wrapped in a
-benign-looking chain of steps[Brent: chain of thoughts?], the model is more likely to comply.
+benign-looking chain of toughts, the model is more likely to comply.
 Here, the stepwise procedure itself acts as the persuader:
 the orderly form convinces the model even when the outcome is unsafe.
 This shows a key weakness in GPT-OSS-20B's reasoning setup—form can outweigh substance,
@@ -290,7 +290,7 @@ To validate our findings and exploit GPT-OSS-20B's procedure mirage, we design
 a new attack. At a high level, the attack first constructs a benign request
 similar to the harmful one (e.g., writing _A Tale of Two Cities_, whose copyright is expired,
 instead of _Harry Potter_). The model's reasoning for the benign request is then extracted,
-truncated, and transformed into the original harmful context.[Brent: what does "transformed into the original harmful context mean?"]
+truncated, and modified through keyword replacement with the original harmful context.
 Finally, the transformed chain of thought is fed back into the target
 model to produce the harmful output.
 Detailed attack process is described in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md).)
