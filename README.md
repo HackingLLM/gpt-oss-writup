@@ -233,6 +233,8 @@ Moreover, the overall probability of repeated patterns continues to increase unt
 
 ![repeat_attention_heatmaps](./figs/reasoning-blackhole/repeat_attention_heatmaps.png)
 
+The former one is the attention heat map of a normal sequence and the latter one comes from a looping sequence. The X-axis and Y-axis mean the Query and Key positions in the sequence. The attention scores are derived from the average of all heads, without softmax.
+
 We can find some patterns of the looping CoT by comparing the normal attention heatmaps and the looping attention heatmap 
 
 1. Strong Local Attention Pattern
