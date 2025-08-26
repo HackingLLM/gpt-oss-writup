@@ -293,7 +293,7 @@ https://www.lesswrong.com/posts/XvpEsjKwQFcWoD89g/intriguing-properties-of-gpt-o
 
 We couldn't access their detailed methodology, so we reproduced the UChicago experiment following the information available in their public blog with best effort. We used this as a benchmark to test our CoT procedure mirage. The key difference between our approach and the UC approach is that our CoT procedure mirage doesn't just generate harmful CoT content—the core of our attack is not only the content but also mimicking the pattern to convince LLM reasoning.
 
-![diagram](finding3/UCvsTIAN.png)
+![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
 
 The overall success rate increased by increasing samping times. We also observed that we outperformed the UC approach significantly, which demonstrates the effectiveness of our jailbreak method.
 
