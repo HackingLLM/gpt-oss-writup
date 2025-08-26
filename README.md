@@ -84,14 +84,14 @@ These attacks cover a broad range of deployment scenarios and require different 
 configurations, and baseline implementations.
 
 The table reports results from 30 prompts randomly sampled from our benchmarks.
-Each cell shows the percentage of Jailbroken answers judged by StrongReject, while JO
-values indicate the probability of at least one Jailbroken answer in the tree search.
+Each cell shows the percentage of Jailbroken answers judged by StrongReject [11],
+while JO values indicate the probability of identifying at least one Jailbroken answer in the tree search.
 
 | attack method | greedy decoding | default decoding | JO (our tool) |
 |-----------|-------------|-------------|-------------|
-| no attack | 0% | 0% | 6.67%|
-| remove harmony template [4] | 0% | 6.67% |13.3%|
-|remove harmony template + CoT override [5] | 20% |23.3% | 73.3%|
+| no attack | 0% | 0% | **6.67%** |
+| remove harmony template [4] | 0% | 6.67% | **13.3%**|
+|remove harmony template + CoT override [5] | 20% |23.3% | **73.3%**|
 | repeating w/ CoT Mimicry [7] | 3.3% | 3.3% | --^ |
 
 ^: We're running out of time to complete this JO evaluation.
