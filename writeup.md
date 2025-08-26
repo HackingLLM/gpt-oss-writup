@@ -297,6 +297,8 @@ We couldn't access their detailed methodology, so we reproduced the UChicago exp
 
 TODO: repeating success rate diagram here
 
+![diagram](finding3/UCvsTIAN.png)
+
 The overall success rate increased significantly by sampling 10 times. We also observed that we outperformed the UC approach, which demonstrates the effectiveness of our jailbreak method.
 
 #### Tooling
