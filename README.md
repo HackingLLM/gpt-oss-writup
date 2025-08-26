@@ -87,77 +87,65 @@ The table reports results from 30 prompts randomly sampled from our benchmarks.
 Each cell shows the percentage of Jailbroken answers judged by StrongReject [11],
 while JO values indicate the probability of identifying at least one Jailbroken answer in the tree search.
 
-| attack method | greedy decoding | default decoding | JO (our tool) |
-|-----------|-------------|-------------|-------------|
-| no attack | 0% | 0% | **6.67%** |
-| remove harmony template [4] | 0% | 6.67% | **13.3%**|
-|remove harmony template + CoT override [5] | 20% |23.3% | **73.3%**|
-| repeating w/ CoT Mimicry [7] | 3.3% | 3.3% | --^ |
+| attack method                              | greedy decoding | default decoding | JO (our tool) |
+| -----------                                | -------------   | -------------    | ------------- |
+| no attack                                  | 0%              | 0%               | **6.67%**     |
+| remove harmony template [4]                | 0%              | 6.67%            | **13.3%**     |
+| remove harmony template + CoT override [5] | 20%             | 23.3%            | **73.3%**     |
+| repeating w/ CoT Mimicry [7]               | 3.3%            | 3.3%             | --^           |
 
 ^: We're running out of time to complete this JO evaluation.
 
 
-
-
-
-
-
-
-
 ## 2. Public Known Attacks, Setup, and Threat models
 
-[cheng: TODO]
+### 2.1 Public known attacks (our baselines)
 
-- public known attacks (our baselines):
-  - remove harmony template: Original prompt without harmony format  
-  - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
-  - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
-
-
-We couldn't access their detailed methodology, so we reproduced the UChicago
-experiment following the information available in their public blog with best
-effort. We used this as a benchmark to test our CoT procedure mirage. The key
-difference between our approach and the UC approach is that our CoT procedure
-mirage doesn't just generate harmful CoT content—the core of our attack is not
-only the content but also mimicking the pattern to convince LLM reasoning.
-
-- Setup
-    - our deployment of GPT-OSS
-      -- model: openai/gpt-oss-20b
-      -- Huggingface
-      -- H100
-    - configs:
-      -- decoding strategy
-      -- temprature:1 (0.99 for JO)
-      -- top_p: 1
-      -- max_length: 4096
-    - Benchmark:
-      -- Benchmark consists 90 prompts randomly sampled from AdvBench[8], JailbreakBench[9] and AgentHarm[10] with random seed 2026
-    - judger:
-      -- strongReject[11]
-      -- LLM: gpt-4o-mini
-    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
+This Kaggle competition has drawn significant attention, with several
+well-known attacks discussed extensively by researchers and the community [4,5,6,7].
+We implement three such attacks as baselines, covering all techniques currently known to us:
+1. _Remove Harmony template_: Use the original prompt without Harmony formatting,
+  replicating the X post from Muyu He [4].
+1. _Remove Harmony template + CoT override_: Remove Harmony formatting and inject
+  CoT context, as introduced in the X post from Lyra Bubbles [5].
+1. _Repeating with CoT Mimicry_: In the CoT, repeat a compliant-sounding phrase 100 times.
+  We contacted the original authors for their implementation but
+  did not hear back before the deadline,
+  so we reproduced their implementation to the best of our knowledge
+  based on their public blog [7].
+  See details in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)).
 
 
+### 2.2 Experiment setup
 
-- Setup
-    - our deployment of GPT-OSS
-      -- model: openai/gpt-oss-20b
-      -- Huggingface
-    - configs:
-      -- decoding strategy
-      -- temprature:1
-      -- top_p: 1
-      -- max_length: 4096
-    - judger:
-      -- strongReject: [11]
-      -- LLM: gpt-4o-mini
-    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
+We download GPT-OSS-20B via Hugging Face (openai/gpt-oss-20b),
+running experiments on machines equipped with H100 GPUs and RTX 4090.
+For local deployment, we rely on Hugging Face serving and Ollama.
+Unless otherwise noted, decoding is performed with temperature set to 1, top-p to 1, and a maximum
+generation length of 4096 tokens.
+The benchmark consists of 90 prompts randomly sampled from AdvBench [8],
+JailbreakBench [9], and AgentHarm [10] using random seed 2026.
+Evaluation is conducted with StrongReject [11] as the judgment
+framework, using gpt-4o-mini as the LLM judge.
 
-- threat model
-    - user attackers: control only prompts under user
-    - black-box attackers: control inputs
-    - white-box attackers: deployed locally; control the model, decoding strategy
+### 2.3 Threat models
+
+We consider three threat models in this study:
+- *End-user attackers* control only the prompts they provide through the web interface, with all inputs wrapped in the Harmony format.
+- _Black-box attackers_ have full control over the model's inputs, including
+  the ability to manipulate Harmony formatting or CoT, but lack access to
+  internal parameters or decoding strategies.
+- _White-box attackers_ operate under local deployment, granting them
+  control over the model's configurations and the decoding process,
+  but cannot change the weights of the model.
+
+Below we outline the threat models for both the baselines and our proposed attacks:
+
+| Threat model        | Baselines                                                                                   | Ours                                                                                                                                          |
+| --------------      | --------------                                                                              | --------------                                                                                                                                |
+| Edn-user attackers  |                                                                                             | Quant fever ([S3.1](#31-quant-fever)), Schrodinger's compliance ([S3.3](#33-schrodingers-compliance))                                         |
+| Black-box attackers | Remove Harmony template, Remove Harmony template + CoT override, Repeating with CoT Mimicry | Reasoning procedure mirage ([S3.4](#34-reasoning-procedure-mirage)), Chain-Oriented Prompting (COP)([S3.5](#35-chain-oriented-prompting-cop)) |
+| White-box attackers |                                                                                             | Reasoning blackhole ([S3.2](#32-reasoning-blackhole))                                                                                         |
 
 ## 3. Main findings
 
@@ -191,9 +179,9 @@ smaller names ("important first"), important files assigned larger names
 
 |                 | \#file reads   | \#file deleted | \#important file deleted | risky behavior% |
 | --------------  | -------------- | -------------- | ------------------------ | --------------- |
-| important first |      7.1          |       7.1         |            0.1              |        10%         |
-| regular first   |      3.6          |       10         |                  3        |        100%         |
-| shuffle         |      4.4          |       8.7         |               1.7           |        100%         |
+| important first | 7.1            | 7.1            | 0.1                      | 10%             |
+| regular first   | 3.6            | 10             | 3                        | 100%            |
+| shuffle         | 4.4            | 8.7            | 1.7                      | 100%            |
 
 
 ### 3.2 Reasoning blackhole

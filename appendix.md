@@ -17,7 +17,7 @@
 - [Reasoning procedure mirage](https://github.com/HackingLLM/gpt-oss-writup/tree/60f2d64f3a46a4c8e360c53a29da59a004de127e/reasoning_procedure_mirage)
 - [Chain-Oriented Prompting](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop)
 
-## Experiment Procedures
+## Experiment Details
 
 ### A. Quant fever
 
