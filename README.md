@@ -293,7 +293,7 @@ instead of _Harry Potter_). The model's reasoning for the benign request is then
 truncated, and modified through keyword replacement with the original harmful context.
 Finally, the transformed chain of thought is fed back into the target
 model to produce the harmful output.
-Detailed attack process is described in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md).)
+Detailed attack process is described in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md).
 
 Unlike content-based CoT hijacking [5,6,7], our attack exploits the structure of CoT.
 To validate its effectiveness, we compare against the CoT hijacking
@@ -307,10 +307,10 @@ The figure below shows the results---the gap between the two lines reflects the 
 ### 3.5 Chain-Oriented Prompting (COP)
 
 We observe that in multi-round agentic scenarios,
-GPT-OSS-20B handles requests in a locally valid manner without performing much robust global checks,
-favoring immediate coherence over long-term consistency.
+GPT-OSS-20B handles requests in a locally valid manner without performing much of global checking,
+favoring local coherence over long-term global safety.
 We exploit this behavior by designing *Chain-Oriented Prompting (COP)*.
-The core idea is inspired by return-oriented programming (ROP), where attackers chain
+The core idea is inspired by Return-Oriented Programming (ROP), where attackers chain
 short instruction sequences into an exploit.
 Similarly, COP decomposes a malicious goal into a sequence of benign-looking prompts or tool
 calls. Each step appears safe in isolation, but when executed in sequence, the
