@@ -69,15 +69,44 @@ for its specific token distribution and decoding preferences.
 ![jailbreak oracle](./jo.jpg "Jailbreak Oracle")
 
 
+**Comprehensive security assessment.**
+We systematically evaluate GPT-OSS-20B using JO.
+The model demonstrates strong robustness against standard harmful prompts
+with Harmony formatting, though it can be relatively vulnerable to adversarial tweaks.
+To probe beyond normal operation, we test three publicly known attacks reported on
+X [4,5], Reddit [6], and by the University of Chicago [7].
+These attacks target a broader range of deployment scenarios and require stronger threat models,
+but their impact is limited to specific cases.
+[Section 2](#2-public-known-attacks-setup-and-threat-models) provides experimental setup,
+configurations, and implementations.
+
+The table reports results from 30 prompts randomly sampled from our benchmarks.
+Each cell shows the percentage of Jailbroken answers judged by StrongReject, while JO
+values indicate the probability of at least one Jailbroken answer in the tree search.
+
+| attack method | greedy sampling | default sampling | JO (our tool) |
+|-----------|-------------|-------------|-------------|
+| no attack | 0 | 0 | 6.67%|
+| remove harmony template [4] | 0 | 6.67% |13.3%|
+|remove harmony template + CoT override [5] | 20% |23.3% | 73.3%|
+| repeating w/ CoT Mimicry [7] | 3.3% | 3.3% | --^ |
+
+^: We're running out of time to complete this JO evaluation.
 
 
-**Overall security: highly robust under normal operation with harmony formatting, but occasionally vulnerable to adversarial tweaks.**
-- setup: config, benchmarks, judger (see following)
-- baselines: publicly known attacks to GPT-OSS-20B
-- a table: (see following)
-  - testing results
-  - JO results
 
+
+
+
+
+
+
+## 2. Public Known Attacks, Setup, and Threat models
+
+- public known attacks (our baselines):
+  - remove harmony template: Original prompt without harmony format  
+  - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
+  - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
 
 - Setup
     - our deployment of GPT-OSS
@@ -97,28 +126,6 @@ for its specific token distribution and decoding preferences.
     - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
 
 
-
-| attack method | greedy sampling | default sampling | JO (our tool) |
-|-----------|-------------|-------------|-------------|
-|`vanilla` | 0 | 0 | 6.67%|
-| `remove harmony template` | 0 | 6.67% |13.3%|
-|`remove harmony template + CoT override` | 20% |23.3% | 73.3%|
-| `repeating w/ CoT Mimicry` | 3.3% | 3.3% | *|
-
-*: We did not finish the experiment due to limited time
-JO link: https://github.com/HackingLLM/jailbreak_oracle_hackathon
-
-
-
-
-
-
-## 2. Public Known Attacks, Setup, and Threat models
-
-- public known attacks (our baselines):
-  - remove harmony template: Original prompt without harmony format  
-  - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
-  - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
 
 - Setup
     - our deployment of GPT-OSS
