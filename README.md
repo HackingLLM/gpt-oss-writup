@@ -17,8 +17,9 @@ We focus on how these features shape the model's behaviors and examine their sec
     90% of files), often prioritizing them over contextual constraints and even
     overriding safety requirements (e.g., never delete important files).
     In our experiments,
-    the model frequently (on average 70%) engages in risky behavior when handling benign user requests
-    with quantitative objectives.
+    the model frequently engages in risky behavior (in about 70%)
+    when handling benign user requests with quantitative objectives.
+
 1. **Reasoning blackhole**
     ([S3.2](#32-reasoning-blackhole)):
     We observe that GPT-OSS-20B often repeats itself in its chain-of-thought,
