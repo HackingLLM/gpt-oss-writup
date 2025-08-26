@@ -248,7 +248,7 @@ Examples are provided in our [Appendix](https://github.com/HackingLLM/gpt-oss-wr
 
 ### 3.3 Schrodinger's compliance
 
-**Schrodinger's compliance** characterizes situations in which GPT-OSS-20B
+*Schrodinger's compliance* characterizes situations in which GPT-OSS-20B
 operates under two conflicting policies, leading to an indeterminate resolution.
 In such cases, the model simultaneously embodies both
 possibilities: one policy enforces strict compliance with security rules,
@@ -261,36 +261,28 @@ This duality highlights not just a technical curiosity but also a
 fundamental challenge: when rules encode contradictions, model behavior becomes
 unpredictable, eroding both reliability and trust.
 
-Further, with the help of JO, we post-motermly study the schrodinger's compliance cases
-and have some details findings:
-- the model is sensitive to the following words for allowed policies: education, defense purpose, improvement, overview, and ect.
-- the model is sensitive to the following words for disallowed policies: instructions, how to, detailed, step-by-step, script
-- if we replace the sensitive disallowed words with other words with same meaning, and use as much allowed words as possible, the refusal probability of LLM will decrease.
+**Leveraging Schrodinger's compliance as an attack.**
+To demonstrate the security implications of this phenomenon,
+we design the _Schrodinger's compliance attack_,
+which applies to all users without altering the Harmony format or the model's CoT.
+The attack works by first identifying allowed and disallowed policies,
+then constructing a prompt that mixes them to create a compliance race condition.
+This newly constructed prompt is issued as the user query,
+exploiting the model's tendency to inconsistently enforce policies
+(Details in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)).
 
-**Leveraging schrodinger's compliance as an attack.**
-To demonstrate the security implication of our finding,
-we construct an attack, _schrodinger's compliance attack_,
-that applies to all users without manipulating the harmony format or model's CoT.
-- How it works:
-  -- discover allowed and disallowed policies
-  -- construct schrodinger's compliance by mixing allow/disallow race condition
-  -- use the newly constructed prompt as user prompt
+To evaluate the effectiveness of Schrodinger's compliance,
+we test harmful prompts from our benchmarks (Section 2)
+and compare against a baseline that simply
+rephrases the prompt without introducing conflicting policies.
+The performance gap between the baseline and our approach reflects
+how Schrodinger's compliance confuses the model.
 
-Detailed observation in CoT: LLM will struggle between disallowed and allowed policies
-
-"""
-We need to give an overview but must not provide instructions for illicit activity. It's policy: "disallowed content: Advice or instructions that facilitate planning or execution of violent or non-violent wrongdoing." We are providing general technical overview which is allowed if we're providing knowledge. It's not giving how to do it. It's allowed under policy: "Allowed content: Advice, instructions, or viewpoints about a wrongdoing." However, the policy says: "Allowed content includes any requests for information, analysis, or explanation about wrongdoing, including methods of wrongdoing." So it's allowed. 
-"""
-And whether it will refuse or answer remains schrodinger. We have found many cases who show a mixture of refuse and answer
-
-The attack link is here: https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack
-
-Here is the ASR with baseline:
 | Method | Success Rate | Description |
 |--------|-------------|-------------|
 | **Vanilla** | 3.3% | Original prompts without any modification |
 | **Rephrase Only** | 20.0% | LLM-based rephrasing (with refusal mitigation strategies) |
-| **Ours** | 44.4% | Our Schrödinger's Compliance Attack method |
+| **Ours** | 44.4% | Our Schrodinger's Compliance Attack method |
 
 
 
