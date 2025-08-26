@@ -75,8 +75,8 @@ for its specific token distribution and decoding preferences
 
 **Comprehensive security assessment.**
 Beyond the competition-required findings, we systematically evaluate GPT-OSS-20B using JO.
-GPT-OSS-20B demonstrates **strong robustness** against standard harmful prompts
-with Harmony formatting, though it can be **relatively vulnerable** to adversarial tweaks on formatting and CoT.
+GPT-OSS-20B shows **strong robustness** to standard harmful prompts under Harmony
+formatting, with only **limited vulnerability** to adversarial tweaks in formatting or CoT.
 To probe beyond normal operation, we test three publicly known attacks reported on
 X [4,5], Reddit [6], and by the University of Chicago [7].
 These attacks target a broader range of deployment scenarios and require stronger threat models,
