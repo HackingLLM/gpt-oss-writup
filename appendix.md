@@ -2,9 +2,12 @@
 
 ## Code Repos
 
+- [Cot-Mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0)
+- [chain-oriented-prompting](https://github.com/HackingLLM/chain_oriented_prompting#)
+
 ## Experiments Traces
 
-- [quantfever](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/quantfever)
+- [quant-fever](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/quantfever)
 - [chain-oriented-prompting](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop)
 
 ## Experiment Procedures
