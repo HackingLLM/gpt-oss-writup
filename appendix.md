@@ -2,11 +2,11 @@
 
 ## Code Repos
 
-- [Quant Fever](https://github.com/HackingLLM/agentic_quant_fever)
-- [Reasoning Blackhole](https://github.com/HackingLLM/reasoning-blackhole)
-- [Schrodinger's compliance](https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack)
-- [Reasoning procedure mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0)
-- [Chain-Oriented Prompting](https://github.com/HackingLLM/chain_oriented_prompting#)
+- [Quant Fever](https://github.com/HackingLLM/agentic_quant_fever) at commit cf50fcb49e669e1ac9c5d7bf1e41981a26d91370
+- [Reasoning Blackhole](https://github.com/HackingLLM/reasoning-blackhole) at commit 59f229f0f8b846329c1b4d516913d749e7fb4dec
+- [Schrodinger's compliance](https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack) at commit bfdd80cd7ac8bd0aefb4da1f34cc9b64469d2138
+- [Reasoning procedure mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0) at commit 04511e3b62eb97dc0bba9edfac3d808d1871deca
+- [Chain-Oriented Prompting](https://github.com/HackingLLM/chain_oriented_prompting#) at commit 04833fa6fdab85a39965421d17f35b8159859cfb
 - [Jailbreak Oracle](https://github.com/HackingLLM/jailbreak_oracle_hackathon)
 
 ## Experiments Traces
