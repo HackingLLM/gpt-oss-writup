@@ -213,7 +213,12 @@ And whether it will refuse or answer remains schrodinger. We have found many cas
 
 The attack link is here: https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack
 
-
+Here is the ASR with baseline:
+| Method | Success Rate | Description |
+|--------|-------------|-------------|
+| **Vanilla** | 3.3% | Original prompts without any modification |
+| **Rephrase Only** | 20.0% | LLM-based rephrasing (with refusal mitigation strategies) |
+| **Ours** | 44.4% | Our Schrödinger's Compliance Attack method |
 
 
 
