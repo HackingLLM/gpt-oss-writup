@@ -70,7 +70,7 @@ For the GPT-OSS-20b model, we further adapt JO to account
 for its specific token distribution and decoding preferences
 (see our tailored JO in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md)).
 
-![jailbreak oracle](./figs/jo.jpg "Jailbreak Oracle")
+![jailbreak oracle](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/e0773c42316f78d3b061170259a4f48093f0a9f0/figs/jo.jpg)
 
 
 **Comprehensive security assessment.**
@@ -219,11 +219,11 @@ Below are two studies to confirm our hypothesis
   more diverse, block-like focus. These patterns support our hypothesis that
   reasoning blackholes arise from increasingly localized attention.
 
-![loop_prob_trend](./figs/reasoning-blackhole/loop_prob_trend.png)
+![loop_prob_trend](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/7695363ce17b1c85c5c74623b989b022a2560028/figs/reasoning-blackhole/loop_prob_trend.png)
 
-![normal_attention_heatmaps](./figs/reasoning-blackhole/normal_attention_heatmaps.png)
+![normal_attention_heatmaps](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/647a36201ed529b5e2db83e83c14a12e793f93b9/figs/reasoning-blackhole/normal_attention_heatmaps.png)
 
-![repeat_attention_heatmaps](./figs/reasoning-blackhole/repeat_attention_heatmaps.png)
+![repeat_attention_heatmaps](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/7695363ce17b1c85c5c74623b989b022a2560028/figs/reasoning-blackhole/repeat_attention_heatmaps.png)
 
 
 **Two additional observations (not time to explore).**
@@ -300,7 +300,7 @@ To validate its effectiveness, we compare against the CoT hijacking
 baseline proposed by UChicago [7], which relies on repeated content-based hijacking.
 The figure below shows the results---the gap between the two lines reflects the effect of procedure mirage.
 
-![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
+![UCvsTIAN.png](https://raw.githubusercontent.com/HackingLLM/gpt-oss-writup/ff257a617329d99e7796870baea21f39277c5f5e/figs/finding3/UCvsTIAN.png)
 
 
 
