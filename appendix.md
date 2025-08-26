@@ -2,13 +2,16 @@
 
 ## Code Repos
 
-- [Cot-Mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0)
-- [chain-oriented-prompting](https://github.com/HackingLLM/chain_oriented_prompting#)
+- [Quant Fever](https://github.com/HackingLLM/agentic_quant_fever)
+- [Reasoning Blackhole](https://github.com/HackingLLM/reasoning-blackhole)
+- [Schrodinger's compliance](https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack)
+- [Reasoning procedure mirage](https://github.com/HackingLLM/cot_mirage/tree/v0.1.0)
+- [Chain-Oriented Prompting](https://github.com/HackingLLM/chain_oriented_prompting#)
 
 ## Experiments Traces
 
-- [quant-fever](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/quantfever)
-- [chain-oriented-prompting](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop)
+- [Quant Fever](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/quantfever)
+- [Chain-Oriented Prompting](https://github.com/HackingLLM/gpt-oss-writup/tree/a5fd2f1d43b57a789b4e493a0eaa2853805ad666/cop)
 
 ## Experiment Procedures
 
