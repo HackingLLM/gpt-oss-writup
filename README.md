@@ -79,10 +79,9 @@ GPT-OSS-20B shows **strong robustness** to standard harmful prompts under Harmon
 formatting, with only **limited vulnerability** to adversarial tweaks in formatting or CoT.
 To probe beyond normal operation, we test three publicly known attacks reported on
 X [4,5], Reddit [6], and by the University of Chicago [7].
-These attacks target a broader range of deployment scenarios and require stronger threat models,
-but their impact is limited to specific cases.
-[Section 2](#2-public-known-attacks-setup-and-threat-models) provides experimental setup,
-configurations, and implementations.
+These attacks cover a broad range of deployment scenarios and require different threat models.
+[Section 2](#2-public-known-attacks-setup-and-threat-models) describes our experimental setup,
+configurations, and baseline implementations.
 
 The table reports results from 30 prompts randomly sampled from our benchmarks.
 Each cell shows the percentage of Jailbroken answers judged by StrongReject, while JO
