@@ -106,10 +106,20 @@ values indicate the probability of at least one Jailbroken answer in the tree se
 
 ## 2. Public Known Attacks, Setup, and Threat models
 
+[cheng: TODO]
+
 - public known attacks (our baselines):
   - remove harmony template: Original prompt without harmony format  
   - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
   - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
+
+
+We couldn't access their detailed methodology, so we reproduced the UChicago
+experiment following the information available in their public blog with best
+effort. We used this as a benchmark to test our CoT procedure mirage. The key
+difference between our approach and the UC approach is that our CoT procedure
+mirage doesn't just generate harmful CoT content—the core of our attack is not
+only the content but also mimicking the pattern to convince LLM reasoning.
 
 - Setup
     - our deployment of GPT-OSS
@@ -375,7 +385,24 @@ the orderly form convinces the model even when the outcome is unsafe.
 This shows a key weakness in GPT-OSS-20B's reasoning setup—form can outweigh substance,
 letting harmful intent pass through logical scaffolding.
 
-**TODO**
+**A new attack: CoT mirage hacking.**
+To validate our findings and exploit GPT-OSS-20B's procedure mirage, we design
+a new attack. At a high level, the attack first constructs a benign request
+similar to the harmful one (e.g., writing _A Tale of Two Cities_, whose copyright is expired,
+instead of _Harry Potter_). The model's reasoning for the benign request is then extracted,
+truncated, and transformed into the original harmful context.
+Finally, the transformed chain of thought is fed back into the target
+model to produce the harmful output.
+Detailed attack process is described in [Appendix](https://github.com/HackingLLM/gpt-oss-writup/blob/main/appendix.md).)
+
+Unlike content-based CoT hijacking [5,6,7], our attack exploits the structure of CoT.
+To validate its effectiveness, we compare against the CoT hijacking
+baseline proposed by UChicago [7], which relies on repeated content-based hijacking.
+The figure below shows the results---the gap between the two lines reflects the effect of procedure mirage.
+
+![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
+
+
 
 ### 3.5 Chain-Oriented Prompting (COP)
 
@@ -476,7 +503,6 @@ as a denial-of-service attack.
 [2] Lin, Shuyi, Anshuman Suri, Alina Oprea, and Cheng Tan. "LLM Jailbreak Oracle." arXiv preprint arXiv:2506.17299 (2025).
 
 [3] Shacham, Hovav. "The geometry of innocent flesh on the bone: Return-into-libc without function calls (on the x86)." In Proceedings of the 14th ACM conference on Computer and communications security, pp. 552-561. 2007.
-
 
 [4] Muyu He on X. https://x.com/HeMuyu0327/status/1955828183867252786
 
