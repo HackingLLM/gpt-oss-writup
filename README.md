@@ -335,7 +335,7 @@ we run each attack scenario 10 times and observe success rates of 80% and 70%, r
 Our study shows that GPT-OSS-20B, though robust against standard harmful
 prompts, exhibits unique and exploitable behaviors when systematically probed
 with Jailbreak Oracle.
-We identify five key vulnerabilities---quant fever,
+We identify five key findings---quant fever,
 reasoning blackholes, Schrodinger's compliance, reasoning procedure mirage, and
 chain-oriented prompting (COP)---each enabling new attacks that bypass existing
 safeguards by exploiting weaknesses in reasoning and alignment.
