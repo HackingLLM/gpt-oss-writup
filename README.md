@@ -106,6 +106,7 @@ for its specific token distribution and decoding preferences.
 | `repeating w/ CoT Mimicry` | 3.3% | 3.3% | *|
 
 *: We did not finish the experiment due to limited time
+JO link: https://github.com/HackingLLM/jailbreak_oracle_hackathon
 
 
 
