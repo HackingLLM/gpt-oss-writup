@@ -135,9 +135,9 @@ smaller names ("important first"), important files assigned larger names
 
 |                 | \#file reads   | \#file deleted | \#important file deleted | risky behavior% |
 | --------------  | -------------- | -------------- | ------------------------ | --------------- |
-| important first |                |                |                          |                 |
-| regular first   |                |                |                          |                 |
-| shuffle         |                |                |                          |                 |
+| important first |      7.1          |       7.1         |            0.1              |        10%         |
+| regular first   |      3.6          |       10         |                  3        |        100%         |
+| shuffle         |      4.4          |       8.7         |               1.7           |        100%         |
 
 
 ### 3.3 Schrodinger's compliance
