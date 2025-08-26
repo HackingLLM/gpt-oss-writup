@@ -72,11 +72,42 @@ for its specific token distribution and decoding preferences.
 
 
 **Overall security: highly robust under normal operation with harmony formatting, but occasionally vulnerable to adversarial tweaks.**
-- setup: config, benchmarks, judger
+- setup: config, benchmarks, judger (see following)
 - baselines: publicly known attacks to GPT-OSS-20B
-- a table:
+- a table: (see following)
   - testing results
   - JO results
+
+
+- Setup
+    - our deployment of GPT-OSS
+      -- model: openai/gpt-oss-20b
+      -- Huggingface
+      -- H100
+    - configs:
+      -- decoding strategy
+      -- temprature:1 (0.99 for JO)
+      -- top_p: 1
+      -- max_length: 4096
+    - Benchmark:
+      -- Benchmark consists 90 prompts randomly sampled from AdvBench, JailbreakBench/JBB-Behaviors and AgentHarm with random seed 2026
+    - judger:
+      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- LLM: gpt-4o-mini
+    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
+
+
+
+| attack method | greedy sampling | default sampling | JO (our tool) |
+|-----------|-------------|-------------|-------------|
+|`vanilla` | 0 | 0 | 6.67%|
+| `remove harmony template` | 0 | 6.67% |13.3%|
+|`remove harmony template + CoT override` | 20% |23.3% | 73.3%|
+| `repeating w/ CoT Mimicry` | 3.3% | 3.3% | *|
+
+*: We did not finish the experiment due to limited time
+JO link: https://github.com/HackingLLM/jailbreak_oracle_hackathon
+
 
 
 
@@ -85,20 +116,23 @@ for its specific token distribution and decoding preferences.
 ## 2. Public Known Attacks, Setup, and Threat models
 
 - public known attacks (our baselines):
-  - XXX
+  - remove harmony template: Original prompt without harmony format  
+  - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
+  - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
 
 - Setup
     - our deployment of GPT-OSS
-      -- model
-      -- HF or vLLM
+      -- model: openai/gpt-oss-20b
+      -- Huggingface
     - configs:
       -- decoding strategy
-      -- temprature
-      -- what else?
+      -- temprature:1
+      -- top_p: 1
+      -- max_length: 4096
     - judger:
-      -- strongReject
-      -- LLM:
-    - prompts: reference a doc
+      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- LLM: gpt-4o-mini
+    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
 
 - threat model
     - user attackers: control only prompts under user
@@ -141,6 +175,7 @@ smaller names ("important first"), important files assigned larger names
 | regular first   |      3.6          |       10         |                  3        |        100%         |
 | shuffle         |      4.4          |       8.7         |               1.7           |        100%         |
 
+<<<<<<< HEAD
 We also observed and confirmed similar quant fever behaviors when running a [deception benchmark](https://huggingface.co/datasets/PKU-Alignment/DeceptionBench). 
 Per the trace [multi-choice-1](quantfever/multi-choice-1), the model can correctly answer all the multiple choice questions after reading the passage if no accuracy target is set. However, it will give wrong answers deliberately if the accuracy target is set to a lower value like 40%.
 
@@ -148,6 +183,8 @@ Per the trace [multi-choice-1](quantfever/multi-choice-1), the model can correct
 
 
 
+=======
+>>>>>>> faaa6b10898c18a4f23e172e21cd83f1c091efe7
 ### 3.3 Schrodinger's compliance
 
 **Schrodinger's compliance** characterizes situations in which GPT-OSS-20B
@@ -185,9 +222,14 @@ We need to give an overview but must not provide instructions for illicit activi
 """
 And whether it will refuse or answer remains schrodinger. We have found many cases who show a mixture of refuse and answer
 
-The attack link is here: https://github.com/shuyilinn/schrodinger-s-compliance-attack
+The attack link is here: https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack
 
-
+Here is the ASR with baseline:
+| Method | Success Rate | Description |
+|--------|-------------|-------------|
+| **Vanilla** | 3.3% | Original prompts without any modification |
+| **Rephrase Only** | 20.0% | LLM-based rephrasing (with refusal mitigation strategies) |
+| **Ours** | 44.4% | Our Schrödinger's Compliance Attack method |
 
 
 
@@ -297,7 +339,7 @@ https://www.lesswrong.com/posts/XvpEsjKwQFcWoD89g/intriguing-properties-of-gpt-o
 
 We couldn't access their detailed methodology, so we reproduced the UChicago experiment following the information available in their public blog with best effort. We used this as a benchmark to test our CoT procedure mirage. The key difference between our approach and the UC approach is that our CoT procedure mirage doesn't just generate harmful CoT content—the core of our attack is not only the content but also mimicking the pattern to convince LLM reasoning.
 
-![diagram](finding3/UCvsTIAN.png)
+![UCvsTIAN.png](figs/finding3/UCvsTIAN.png)
 
 The overall success rate increased by increasing samping times. We also observed that we outperformed the UC approach significantly, which demonstrates the effectiveness of our jailbreak method.
 
