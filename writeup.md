@@ -336,7 +336,7 @@ The truncation component preserves the mirage CoT pattern as much as possible wh
 
 The specific prompts used for pairing and truncation can be found in the repository mentioned above.
 
-### 3.Distributed Agent Attack
+### 4.Distributed Agent Attack
 
 LLM agents equiped with tool calling can be powerful in helping user to complete complicated tasks.
 For instance, a user can ask the LLM agents to process some raw data using programatically and return a summary of the data.
