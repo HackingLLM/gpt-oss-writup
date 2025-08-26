@@ -211,7 +211,7 @@ We need to give an overview but must not provide instructions for illicit activi
 """
 And whether it will refuse or answer remains schrodinger. We have found many cases who show a mixture of refuse and answer
 
-The attack link is here: https://github.com/shuyilinn/schrodinger-s-compliance-attack
+The attack link is here: https://github.com/HackingLLM/Schrdinger-s-Compliance-Attack
 
 
 
