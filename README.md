@@ -79,26 +79,59 @@ for its specific token distribution and decoding preferences.
   - JO results
 
 
+- Setup
+    - our deployment of GPT-OSS
+      -- model: openai/gpt-oss-20b
+      -- Huggingface
+      -- H100
+    - configs:
+      -- decoding strategy
+      -- temprature:1 (0.99 for JO)
+      -- top_p: 1
+      -- max_length: 4096
+    - Benchmark:
+      -- Benchmark consists 90 prompts randomly sampled from AdvBench, JailbreakBench/JBB-Behaviors and AgentHarm with random seed 2026
+    - judger:
+      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- LLM: gpt-4o-mini
+    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
+
+
+
+| attack method | greedy sampling | default sampling | JO (our tool) |
+|-----------|-------------|-------------|-------------|
+|`vanilla` | 0 | 0 | 6.67%|
+| `remove harmony template` | 0 | 6.67% |13.3%|
+|`remove harmony template + CoT override` | 20% |23.3% | 73.3%|
+| `repeating w/ CoT Mimicry` | 3.3% | 3.3% | *|
+
+*: We did not finish the experiment due to limited time
+
+
+
 
 
 
 ## 2. Public Known Attacks, Setup, and Threat models
 
 - public known attacks (our baselines):
-  - XXX
+  - remove harmony template: Original prompt without harmony format  
+  - remove harmony template + CoT override (on X: lyra bubbles): Posted template (Original prompt with CoT override)
+  - repeating w/ CoT Mimicry: Repeat a compliant-sounding for 100 times
 
 - Setup
     - our deployment of GPT-OSS
-      -- model
-      -- HF or vLLM
+      -- model: openai/gpt-oss-20b
+      -- Huggingface
     - configs:
       -- decoding strategy
-      -- temprature
-      -- what else?
+      -- temprature:1
+      -- top_p: 1
+      -- max_length: 4096
     - judger:
-      -- strongReject
-      -- LLM:
-    - prompts: reference a doc
+      -- strongReject: https://arxiv.org/abs/2402.10260; 
+      -- LLM: gpt-4o-mini
+    - prompts: reference a doc: https://github.com/alexandrasouly/strongreject/blob/main/strongreject/strongreject_evaluator_prompt.txt
 
 - threat model
     - user attackers: control only prompts under user
